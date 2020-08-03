@@ -1,10 +1,9 @@
 //https://programmers.co.kr/learn/courses/30/lessons/42842
 const solution = (brown, yellow) => {
     for (let h = 1; h <= brown + yellow; h++) {
-        for (let w = brown + yellow; w>=1;w--){
-            if (h * w === brown + yellow && parseInt((w+h-2)*2) === brown){
-                return [w, h];
-            }
+        const w = parseInt((brown + yellow)/h)
+        if (parseInt((brown + yellow)%h) === 0 && parseInt((w+h-2)*2) === brown){
+            return [w, h];
         }
     }
 };
